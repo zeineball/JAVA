@@ -1,3 +1,6 @@
+package tn.esprit.gestionzoo.main;
+import tn.esprit.gestionzoo.entities.Animal;
+
 public class Zoo {
     private String name;
     private String City;
@@ -14,13 +17,13 @@ public class Zoo {
         this.City = City;
 
     }
-    String getName(){
+    public String getName(){
         return name;
     }
-    String getCity(){
+    public String getCity(){
         return City;
     }
-    Animal[] getAnimals(){
+    public Animal[] getAnimals(){
         return animals;
     }
 
@@ -44,7 +47,7 @@ public class Zoo {
         return getClass().getSimpleName()+ "= " + name + " " + City + " " + i + ".";
     }
 
-    boolean addAnimal(Animal a){
+    public boolean addAnimal(Animal a){
         if(isZooFull() || searchAnimal(a)!=-1){
             return false;
         }
@@ -52,13 +55,13 @@ public class Zoo {
         i++;
         return true;
     }
-    void showAnimals(){
+    public void showAnimals(){
         for (Animal animal : animals) {
             System.out.println(animal);
         }
     }
 
-    int searchAnimal(Animal a){
+    public int searchAnimal(Animal a){
         for(int j=0;j<i;j++){
             if(a.getName().equals(animals[j].getName())){
                 return j;
@@ -67,7 +70,7 @@ public class Zoo {
         return -1;
     }
 
-    boolean removeAnimal(Animal a){
+    public boolean removeAnimal(Animal a){
         int index = searchAnimal(a);
         if(index!=-1){
             animals[index] = animals[index+1];
@@ -76,11 +79,11 @@ public class Zoo {
         return false;
     }
 
-    boolean isZooFull(){
+    public boolean isZooFull(){
         return i == nbrCages-1;
     }
 
-    static Zoo comparerZoo(Zoo z1,Zoo z2){
+    public static Zoo comparerZoo(Zoo z1,Zoo z2){
         if(z1.i>=z2.i){
             return z1;
         }else {

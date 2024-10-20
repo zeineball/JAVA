@@ -1,3 +1,6 @@
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.main.Zoo;
+
 public class Main {
     public static void main(String[] args) {
         Animal test= new Animal("oiseau","perruche",6,false);
